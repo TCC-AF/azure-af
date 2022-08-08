@@ -7,7 +7,7 @@ from scipy.signal import resample, butter, sosfiltfilt
 
 # ======== VARIABLES ======== #
 tflite_model_name = "model_custom.tflite"
-tflite_model_path = os.path.join('./ecg-predict/modules', tflite_model_name)
+tflite_model_path = os.path.join("./ecg-predict/modules", tflite_model_name)
 
 # ======== PRE-PROCESSING ======== #
 def second_largest(array):
@@ -72,16 +72,16 @@ def run_tflite(request):
   try:
       prediction, reject = process_entry_tflite(tflite_model_path, request)
       result = {
-          'prediction': int(prediction),
-          'reject': int(reject),
-          'model': tflite_model_name
+          "prediction": int(prediction),
+          "reject": int(reject),
+          "model": tflite_model_name
       }
 
       return result
 
   except Exception as e:
     error = str(e)
-    return{'data' : error, "message" : 'unable to classify sample'}
+    return{"data" : error, "message" : "unable to classify sample"}
 
 # def run_prediction_tflite(type, filename):
 #   # sample_name = "ecg.json"
