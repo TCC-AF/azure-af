@@ -7,7 +7,7 @@ azure-functions
 absl-py==0.15.0
 astunparse==1.6.3
 cachetools==5.2.0
-certifi==2022.12.7
+certifi==2023.7.22
 charset-normalizer==2.1.0
 flatbuffers==1.12
 gast==0.3.3
